@@ -1,4 +1,5 @@
 <template>
+  <el-button>123</el-button>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
