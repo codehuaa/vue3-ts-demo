@@ -10,7 +10,27 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('../views/HomeView.vue')
+    component: () => import('../views/HomeView.vue'),
+    children: [
+      {
+        path: '/goods',
+        name: 'goods',
+        meta: {
+          isShow: true,    // 控制该路由是否要在主界面侧边栏生成导航  
+          title: '商品列表' 
+        },
+        component: () => import('../views/GoodsView.vue')
+      },
+      {
+        path: '/users',
+        name: 'users',
+        meta: {
+          isShow: true,    // 控制该路由是否要在主界面侧边栏生成导航   
+          title: '用户列表'
+        },
+        component: () => import('../views/UserView.vue')
+      }
+    ]
   }
 ]
 
